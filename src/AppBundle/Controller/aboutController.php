@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class aboutController extends Controller
+class AboutController extends Controller
 {
     /**
      * @Route("/about", name="about")

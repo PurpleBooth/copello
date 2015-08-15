@@ -1,12 +1,14 @@
 <?php
 
-class Card{
-  private $cardText = 'Test';
+class Card
+{
+    private $cardText = 'Test';
 
-  function __construct(){}
+    function __construct(){}
 
-  public function setText(){
-    // set the cards text
-  }
+    public function setText()
+    {
+      // set the cards text
+    }
 
 }
