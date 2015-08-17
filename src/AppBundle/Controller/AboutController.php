@@ -2,27 +2,21 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\BoardAssets\Board;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class AboutController extends Controller
 {
     /**
-     * @Route("/about", name="about")
+     * @Route("/about", name="about", defaults={"_format": "json"})
      */
     public function aboutAction()
     {
-      return $this->render('default/about.html.twig');
+        $board = new Board();
+        $board->setBoardName("Example!");
 
-      //   return new Response (
-      //     '<html><body> About Page </body></html>'
-      // );
+        return new JsonResponse($board);
     }
 }
-
-// $html = $this->container->get('templating')->render(
-//     'example.html.twig',
-// );
-// return new Response($html);
